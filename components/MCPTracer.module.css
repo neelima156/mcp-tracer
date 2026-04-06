@@ -1,0 +1,467 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mono { font-family: var(--font-mono); }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border-right: 0.5px solid var(--border-dim);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.5px solid var(--border-dim);
+}
+
+.logoMark {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--mode-dep);
+  font-family: var(--font-mono);
+}
+
+.logoSub {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.sideSection { margin-bottom: 1.75rem; }
+
+.sideLabel {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
+.sideBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  border: 0.5px solid transparent;
+  background: transparent;
+  margin-bottom: 3px;
+  transition: background 0.12s;
+}
+
+.sideBtn:hover { background: var(--bg-hover); }
+
+.sideBtnActive {
+  background: var(--bg-raised);
+  border-color: var(--border-default);
+}
+
+.sideBtnTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.sideBtnDesc {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.modeBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  border: 0.5px solid var(--border-dim);
+  background: transparent;
+  margin-bottom: 4px;
+  transition: border-color 0.12s, color 0.12s;
+  color: var(--text-secondary);
+}
+
+.modeBtn:hover { border-color: var(--border-default); }
+
+.modeBtnActive { background: var(--bg-raised); }
+
+.modeBtnLabel {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.modeBtnCaption {
+  font-size: 11px;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+.sideLegend { margin-bottom: 1.5rem; }
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+}
+
+.legendDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.sideFooter {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--border-dim);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  line-height: 1.8;
+}
+
+.footerLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footerLink:hover { color: var(--text-primary); }
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  padding: 2rem 2rem 4rem;
+  min-width: 0;
+}
+
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+.mainTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.mainPrompt {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.runBtn {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 0.5px solid;
+  background: transparent;
+  white-space: nowrap;
+  transition: opacity 0.12s;
+  flex-shrink: 0;
+}
+
+.runBtn:hover:not(:disabled) { opacity: 0.75; }
+
+/* meta row */
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.metaBadge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-raised);
+  color: var(--text-secondary);
+  border: 0.5px solid var(--border-dim);
+}
+
+.modePill {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 0.5px solid;
+  font-weight: 500;
+}
+
+.totalMs {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* ── Trace panel ── */
+.tracePanel {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.waveGroup {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid var(--border-dim);
+}
+
+.waveGroup:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.waveLabel {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+/* ── Tool row ── */
+.toolRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 0.5px solid var(--border-dim);
+}
+
+.toolRow:last-child { border-bottom: none; }
+
+.toolLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.toolName {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.depChip {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  border: 0.5px solid var(--border-dim);
+  border-radius: 3px;
+  padding: 1px 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.toolRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.barTrack {
+  width: 120px;
+  height: 3px;
+  background: var(--bg-hover);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.barRunning {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.barDone {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.toolMs {
+  font-size: 11px;
+  width: 56px;
+  text-align: right;
+}
+
+/* ── LLM summary ── */
+.summaryCard {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-dim);
+  border-left: 2px solid var(--mode-dep);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  margin-bottom: 1rem;
+  animation: slide-in 0.2s ease both;
+}
+
+.summaryMeta {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.summaryText {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ── Compare ── */
+.compareCard {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  margin-bottom: 1rem;
+  animation: slide-in 0.2s ease both;
+}
+
+.compareTitle {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.compareRow { margin-bottom: 10px; }
+
+.compareRowLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.compareTrack {
+  height: 6px;
+  background: var(--bg-hover);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.compareFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.compareInsight {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 0.5px solid var(--border-dim);
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Empty state ── */
+.empty {
+  padding: 2.5rem 0;
+}
+
+.emptyTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.emptyBody {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+
+.emptyTools {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emptyTool {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emptyDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.emptyToolName {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.emptyDep {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  border: 0.5px solid var(--border-dim);
+  border-radius: 3px;
+  padding: 1px 6px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .page { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; }
+  .main { padding: 1.25rem 1rem 3rem; }
+  .mainHeader { flex-direction: column; }
+  .barTrack { width: 80px; }
+}
